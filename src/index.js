@@ -10,7 +10,10 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import reducers from './redux/reducers';
 
-const store = createStore(reducers, composeWithDevTools(applyMiddleware(thunk)));
+const store = createStore(
+  reducers,
+  composeWithDevTools(applyMiddleware(thunk))
+);
 
 ReactDOM.render(
   <React.StrictMode>
@@ -18,7 +21,7 @@ ReactDOM.render(
       <BrowserRouter>
         <App />
       </BrowserRouter>
-    </Provider >
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
