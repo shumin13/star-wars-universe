@@ -8,9 +8,9 @@ import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import reducer from './redux/reducers/people';
+import reducers from './redux/reducers';
 
-const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
+const store = createStore(reducers, composeWithDevTools(applyMiddleware(thunk)));
 
 ReactDOM.render(
   <React.StrictMode>
