@@ -5,7 +5,7 @@ import { Typography } from '@material-ui/core';
 const useStyles = makeStyles(() => ({
   container: {
     padding: '12px 0',
-    marginBottom: '1.52rem',
+    margin: '1.52rem 0',
     borderBottom: '2px solid #eb3b61',
   },
   text: {
