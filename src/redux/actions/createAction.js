@@ -5,7 +5,6 @@ import {
   FETCH_ERROR,
   FETCH_FROM_STORE,
 } from './actionTypes';
-import { extractId } from '../../common/utils';
 
 const fetchRequest = (name) => {
   return {
@@ -34,10 +33,9 @@ const fetchFromStore = (name) => {
 };
 
 export const createAction = (name = '', reducerName) => {
-  return (url) => {
+  return (url, id) => {
     return async (dispatch, useState) => {
       dispatch(fetchRequest(name));
-      const id = extractId(url);
       const { [reducerName]: state } = useState();
       if (state['byId'][id]) {
         dispatch(fetchFromStore(name));
