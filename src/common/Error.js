@@ -1,24 +1,23 @@
 import React from 'react';
-import Snackbar from '@material-ui/core/Snackbar';
-import MuiAlert from '@material-ui/lab/Alert';
+import { makeStyles } from '@material-ui/core/styles';
+import { Alert, AlertTitle } from '@material-ui/lab';
 
-const Alert = (props) => {
-  return <MuiAlert elevation={6} variant='filled' {...props} />;
-};
+const useStyles = makeStyles(() => ({
+  container: {
+    marginTop: 30,
+  },
+}));
 
 const Error = ({ error }) => {
-  const [open, setOpen] = React.useState(true);
-
-  const handleClose = () => {
-    setOpen(false);
-  };
+  const classes = useStyles();
 
   return (
-    <Snackbar open={open}>
-      <Alert severity='error' onClose={handleClose}>
+    <div className={classes.container}>
+      <Alert severity='error' variant='filled'>
+        <AlertTitle>Error</AlertTitle>
         {error}
       </Alert>
-    </Snackbar>
+    </div>
   );
 };
 
