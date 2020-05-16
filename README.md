@@ -8,8 +8,10 @@
 
 ## Getting Started
 
-- `yarn`
-- `yarn start`
+```
+yarn
+yarn start
+```
 
 ## Description
 
