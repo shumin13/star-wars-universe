@@ -6,7 +6,7 @@ const useStyles = makeStyles(() => ({
   container: {
     padding: '12px 0',
     marginBottom: '1.52rem',
-    borderBottom: '2px solid #9e4f60',
+    borderBottom: '2px solid #eb3b61',
   },
   text: {
     color: 'rgb(221, 221, 221)',
