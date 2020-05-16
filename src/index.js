@@ -6,6 +6,7 @@ import thunk from 'redux-thunk';
 import { BrowserRouter } from 'react-router-dom';
 import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
 import App from './App';
+import './index.css';
 import * as serviceWorker from './serviceWorker';
 import reducers from './redux/reducers';
 
