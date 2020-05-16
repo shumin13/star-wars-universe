@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { Grid } from '@material-ui/core';
 import {
+  clearError,
   fetchPerson,
   fetchPlanet,
   fetchFilm,
@@ -29,6 +30,7 @@ const Profile = ({
   byId,
   loading,
   error,
+  clearError,
   fetchPerson,
   fetchFilm,
   fetchPlanet,
@@ -41,6 +43,12 @@ const Profile = ({
   useEffect(() => {
     fetchPerson(`https://swapi.dev/api/people/${personId}/`, personId);
   }, [fetchPerson, personId]);
+
+  useEffect(() => {
+    return () => {
+      clearError();
+    };
+  }, [clearError]);
 
   const person = byId[personId];
 
@@ -138,6 +146,7 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps, {
+  clearError,
   fetchPerson,
   fetchPlanet,
   fetchFilm,

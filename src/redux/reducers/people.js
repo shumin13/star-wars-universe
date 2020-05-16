@@ -3,6 +3,7 @@ import {
   FETCH_SUCCESS,
   FETCH_ERROR,
   FETCH_FROM_STORE,
+  CLEAR_ERROR,
 } from '../actions/actionTypes';
 
 const initialState = {
@@ -55,6 +56,11 @@ const peopleReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
+        error: null,
+      };
+    case `PERSON/${CLEAR_ERROR}`:
+      return {
+        ...state,
         error: null,
       };
     default:

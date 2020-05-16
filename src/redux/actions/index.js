@@ -1,6 +1,6 @@
 import { createAction } from './createAction';
 
-export { fetchPeople } from './people';
+export { fetchPeople, clearError } from './people';
 
 export const fetchPerson = createAction('PERSON', 'people');
 

@@ -1,5 +1,10 @@
 import axios from 'axios';
-import { FETCH_REQUEST, FETCH_SUCCESS, FETCH_ERROR } from './actionTypes';
+import {
+  FETCH_REQUEST,
+  FETCH_SUCCESS,
+  FETCH_ERROR,
+  CLEAR_ERROR,
+} from './actionTypes';
 import { extractId } from '../../common/utils';
 
 const fetchRequest = () => {
@@ -41,5 +46,11 @@ export const fetchPeople = () => {
     } catch (error) {
       dispatch(fetchError(error.message));
     }
+  };
+};
+
+export const clearError = () => {
+  return {
+    type: `PERSON/${CLEAR_ERROR}`,
   };
 };
