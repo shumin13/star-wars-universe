@@ -39,7 +39,7 @@ const peopleReducer = (state = initialState, action) => {
         ...state,
         byId: {
           ...state.byId,
-          ...action.byId,
+          ...action.data,
         },
         loading: false,
         error: null,
